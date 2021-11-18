@@ -1,0 +1,18 @@
+
+extends layout
+
+block content
+
+  h1= title
+  p Welcome too #{title}
+
+  each course in courses
+    div#course._id
+      ul
+        li ID: #{course._id}
+        li Course Code: #{course.courseId}
+        li Course Name: #{course.courseName}
+        li Course Period: #{course.coursePeriod}
+      div
+        button(onclick='deleteCourse(' + course._id + ')') Delete
+  script(src='/javascripts/main.js')
